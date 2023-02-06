@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "pygelf-ex"
-version = "0.0.1"
+version = "0.0.2"
 authors = [
   { name="Ivan Mukhin", email="muhin.ivan@gmail.com" },
   { name="Anders Ågren", email="anders.agren@rssoftware.se" },
