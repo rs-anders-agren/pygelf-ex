@@ -2,14 +2,14 @@ from setuptools import setup
 
 
 setup(
-    name='pygelf',
-    version='0.4.2',
-    packages=['pygelf'],
+    name='pygelf-ex',
+    version='0.0.1',
+    packages=['pygelf-ex'],
     description='Logging handlers with GELF support',
     keywords='logging udp tcp ssl tls graylog2 graylog gelf',
-    author='Ivan Mukhin',
-    author_email='muhin.ivan@gmail.com',
-    url='https://github.com/keeprocking/pygelf',
+    author='Ivan Mukhin, Anders Ågren',
+    author_email='muhin.ivan@gmail.com, anders.agren@rssoftware.se',
+    url='https://github.com/rs-anders-agren/pygelf-ex',
     long_description=open('README.rst').read(),
     license='MIT',
     classifiers=[
