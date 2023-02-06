@@ -167,7 +167,7 @@ class GelfHttpHandler(BaseHandler, LoggingHandler):
 
 class GelfHttpsHandler(BaseHandler, LoggingHandler):
 
-    def __init__(self, host, port, compress=True, path='/gelf', timeout=5, validate=False, ca_certs=None, certfile=None, keyfile=None, keyfile_password=None, **kwargs):
+    def __init__(self, host, port, compress=True, path='/gelf', timeout=5, validate=False, ca_certs=None, certfile=None, keyfile=None, keyfile_password=None, headers={}, **kwargs):
         """
         Logging handler that transforms each record into GELF (graylog extended log format) and sends it over HTTP.
 
@@ -182,6 +182,7 @@ class GelfHttpsHandler(BaseHandler, LoggingHandler):
         :param certfile: not yet used
         :param keyfile: not yet used
         :param keyfile_password: not yet used
+        :param headers: default headers for the request, for example to set the content type
         """
 
         LoggingHandler.__init__(self)
@@ -191,7 +192,7 @@ class GelfHttpsHandler(BaseHandler, LoggingHandler):
         self.port = port
         self.path = path
         self.timeout = timeout
-        self.headers = {}
+        self.headers = headers
         self.ca_certs = ca_certs
         self.keyfile = keyfile
         self.certfile = certfile
