@@ -1,15 +1,11 @@
 pygelf
 ======
-|travis| |coveralls| |pypi| |downloads|
+|pypi| |downloads|
 
-.. |travis| image:: https://travis-ci.org/keeprocking/pygelf.svg?branch=master
-    :target: https://travis-ci.org/keeprocking/pygelf
-.. |pypi| image:: https://badge.fury.io/py/pygelf.svg
-    :target: https://pypi.python.org/pypi/pygelf
-.. |coveralls| image:: https://coveralls.io/repos/github/keeprocking/pygelf/badge.svg?branch=master
-    :target: https://coveralls.io/github/keeprocking/pygelf?branch=master
-.. |downloads| image:: https://pepy.tech/badge/pygelf/month
-    :target: https://pypi.python.org/pypi/pygelf
+.. |pypi| image:: https://badge.fury.io/py/pygelf-ex.svg
+    :target: https://pypi.python.org/pypi/pygelf-ex
+.. |downloads| image:: https://pepy.tech/badge/pygelf-ex/month
+    :target: https://pypi.org/project/pygelf-ex/
 
 Python logging handlers with GELF (Graylog Extended Log Format) support.
 
@@ -19,7 +15,7 @@ Get pygelf
 ==========
 .. code:: python
 
-    pip install pygelf
+    pip install pygelf-ex
 
 Usage
 =====
