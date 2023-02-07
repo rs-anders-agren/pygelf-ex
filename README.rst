@@ -98,6 +98,10 @@ HTTP:
 - **path** ('/gelf' by default) - path of the HTTP input (http://docs.graylog.org/en/latest/pages/sending_data.html#gelf-via-http)
 - **timeout** (5 by default) - amount of seconds that HTTP client should wait before it discards the request if the server doesn't respond
 
+HTTPS:
+
+- **headers** (empty by default) - default headers for the request, for example to set the content type
+
 Static fields
 =============
 
