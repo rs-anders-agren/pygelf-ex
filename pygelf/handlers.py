@@ -167,7 +167,7 @@ class GelfHttpHandler(BaseHandler, LoggingHandler):
 
 class GelfHttpsHandler(BaseHandler, LoggingHandler):
 
-    def __init__(self, host, port, compress=True, path='/gelf', timeout=5, validate=False, ca_certs=None, certfile=None, keyfile=None, keyfile_password=None, headers={}, **kwargs):
+    def __init__(self, host, port, compress=True, path='/gelf', timeout=5, validate=False, ca_certs=None, certfile=None, keyfile=None, keyfile_password=None, headers={}, waitForResponse=False, **kwargs):
         """
         Logging handler that transforms each record into GELF (graylog extended log format) and sends it over HTTP.
 
@@ -183,6 +183,7 @@ class GelfHttpsHandler(BaseHandler, LoggingHandler):
         :param keyfile: not yet used
         :param keyfile_password: not yet used
         :param headers: default headers for the request, for example to set the content type
+        :param waitForResponse: whether or not to wait for the response before returning
         """
 
         LoggingHandler.__init__(self)
@@ -197,6 +198,7 @@ class GelfHttpsHandler(BaseHandler, LoggingHandler):
         self.keyfile = keyfile
         self.certfile = certfile
         self.keyfile_password = keyfile_password
+        self.waitForResponse = waitForResponse
 
         # Set up context: https://docs.python.org/3/library/http.client.html#http.client.HTTPSConnection
         # create_default_context returns an SSLContext object
@@ -220,3 +222,5 @@ class GelfHttpsHandler(BaseHandler, LoggingHandler):
         data = self.convert_record_to_gelf(record)
         connection = httplib.HTTPSConnection(host=self.host, port=self.port, context=self.ctx, timeout=self.timeout)
         connection.request('POST', self.path, data, self.headers)
+
+        if self.waitForResponse: connection.getresponse()

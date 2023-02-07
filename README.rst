@@ -101,6 +101,7 @@ HTTP:
 HTTPS:
 
 - **headers** (empty by default) - default headers for the request, for example to set the content type
+- **waitForResponse** (False by default) - whether or not to wait for the response before returning
 
 Static fields
 =============
